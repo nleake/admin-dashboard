@@ -33,32 +33,94 @@
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
   }
-  #root, #__next {
-    isolation: isolate;
+
+  :root {
+    --primary: #1992D4;
+    --base: #E2E8F0;
+    --white: #fff;
+    --ink: #100B00;
+    --secondary: #FACC15;
+    --theme-name: "light";
+    font-size: 16px;
   }
 
   /* End CSS Reset */
+  li {
+    list-style-type: none;
+  }
+  
   .wrapper {
-    height: 100%;
     display: grid;
-    /* grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr); */
+    grid-template-columns: 1fr 4fr;
     grid-template-areas:
-    "sidebar header header header"
-    "sidebar main main main"
-    "sidebar main main main"
-    "sidebar main main main"
+    "sidebar header"
+    "sidebar main"
+    "sidebar main"
+    "sidebar main"
     ;
   }
   .sidebar {
-    background-color: aqua;
+    background-color: var(--primary);
     grid-area: sidebar;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
   .header {
-    background-color: blueviolet;
+    background-color: var(--white);
     grid-area: header;
   }
-  .main {
-    background-color: burlywood;
-    grid-area: main;
+  header > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+  .main {
+    background-color: var(--base);
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "projects announcements"
+    "projects trending"
+    ;
+  }
+  .projects {
+    grid-area: projects;
+    padding: 10px;
+  }
+
+  .card-set {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    background-color: var(--white);
+    padding: .5rem;
+  }
+
+  .card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .announcements {
+    grid-area: announcements;
+  }
+
+  .trending {
+    grid-area: trending;
+  }
+.action-button {
+  background-color: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: .5rem 2rem;
+  font-weight: 600;
+  border-radius: 4rem;
+}
