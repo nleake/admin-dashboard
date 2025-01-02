@@ -73,12 +73,32 @@
     flex-direction: column;
     gap: 2rem;
     font-weight: 700;
-    padding-left: 2rem;
-  }
-  .sidebar li {
-    margin-bottom: .5rem;
+    padding: 1rem 0 0 1rem;
+    svg {
+      margin-right: 1rem;
+      fill: var(--white);
+    }
+    li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+  
+    }
   }
 
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: -2px;
+  svg {
+    height: 30px;
+  }
+  span {
+    position: relative;
+    right:.5rem;
+    font-size: 1.25rem;
+  }
+}
   /* Header  */
   .header {
     background-color: var(--white);
@@ -90,22 +110,65 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
+    font-weight: 600;
   }
+
   .search {
     display: flex;
+    align-items: center;
     flex: 1;
     form:nth-child(1) {
       width: 100%;
     }
+    input {
+      width: 50%;
+      border-radius: 2rem;
+      background-color: var(--base);
+      border: none
+    }
+    button {
+      position: relative;
+      top: 6px;
+      place-items: center;
+      background-color: var(--white);
+      border-radius: 50%;
+
+      svg {
+        height: 25px;
+        display: grid;
+        fill: var(--ink);
+        opacity: 50%;
+      }
+    }
   }
-  .search input {
-    width: 50%;
-    border-radius: 2rem;
-    background-color: var(--base);
-    border: none;
+  .user-stuff {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    
+  }
+  .avatar {
+    height:50px;
+    width: 50px;
   }
   .actions {
     gap: 2.5rem;
+    button:hover {
+      background-color: #076ea5;
+    }
+  }
+
+  .greeting {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .avatar {
+      transform: scale(1.5);
+    }
+    .greeting-user {
+      font-size: 1.5rem;
+    }
   }
 
 /* Main */
@@ -149,6 +212,9 @@
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
+    svg {
+      fill: var(--ink);
+    }
   }
 
   .announcements {
@@ -181,7 +247,7 @@
 .announcements ul, .trending ul {
   background-color: var(--white);
   border-radius: 8px;
-  padding: .5rem;
+  padding: 1rem;
   padding-left: 1.5rem;
   li {
     margin-bottom: 1rem;
@@ -193,4 +259,23 @@
 .announcements li {
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--base);
+}
+
+svg {
+  height: 20px;
+  display: inline;
+}
+
+.trending-user {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+@media (max-width: 600px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    ;
+  }
 }
